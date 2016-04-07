@@ -1,4 +1,5 @@
 import matplotlib.pyplot as plt
+import numpy as np
 
 def plot_training_error(train_err = None, val_err = None, run_name = None, out_file = None):
     plt.figure()
