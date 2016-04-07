@@ -34,7 +34,7 @@ def plot_training_error(train_err = None, val_err = None, run_name = None, out_f
     plt.close()
 
 
-def compare_images(x, x_hat, save_names, titles, cmap='Greys_r', vmin=0.0, vmax=1.0):
+def compare_images(x, x_hat, save_names, titles, cmap='Greys_r', vmin=None, vmax=None):
     '''
     x is like (n_samples, nt, n_channels, nx, ny)
     '''
@@ -42,6 +42,7 @@ def compare_images(x, x_hat, save_names, titles, cmap='Greys_r', vmin=0.0, vmax=
         is_color = False
     else:
         is_color = True
+    nt = x.shape[1]
     for i in range(x.shape[0]):
         for t in range(x.shape[1]):
             plt.subplot(2, nt, t+1)
